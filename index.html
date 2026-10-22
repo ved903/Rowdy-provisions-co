@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rowdy Provisions Co.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Student-run Vista Ridge spirit wear. Browse our shirt designs and order or request a custom design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+/* Layout: black athletic bands, a bright white "stage" for the shirts, jersey-stripe dividers between sections */
+:root{
+  --black:#0B0B0C; --ink:#17171A; --line:#2A2A2F;
+  --red:#C8102E; --red-hot:#E0213F; --red-deep:#9C0C24;
+  --white:#FFFFFF; --paper:#F3F2F0; --silver:#A9ABAF; --muted:#6B6B72;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --label:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --gutter:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.label{font-family:var(--label);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:14px}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance;letter-spacing:.005em}
+:focus-visible{outline:3px solid var(--red-hot);outline-offset:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:16px;text-decoration:none;border:0;cursor:pointer;padding:16px 26px;background:var(--red);color:var(--white);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:background .2s,transform .2s}
+.btn:hover{background:var(--red-hot);transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn--xl{font-size:clamp(17px,2.4vw,22px);padding:22px 40px;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.btn--ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px var(--line)}
+.btn--ghost:hover{background:var(--ink)}
+
+/* Jersey stripe divider */
+.stripe{height:22px;background:linear-gradient(var(--red) 0 7px,var(--white) 7px 11px,var(--black) 11px 15px,var(--white) 15px 18px,var(--red) 18px)}
+.stripe--thin{height:10px;background:linear-gradient(var(--red) 0 4px,var(--white) 4px 6px,var(--red) 6px)}
+
+/* Nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--black)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,11,12,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+.brand-mark{width:42px;height:42px;flex:0 0 auto;border-radius:50%;box-shadow:0 0 0 2px var(--white)}
+.footer .brand-mark{width:64px;height:64px}
+.footer .brand{font-size:28px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a:not(.btn){font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:15px;text-decoration:none;color:var(--silver);transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--white)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media (max-width:720px){.nav-links a:not(.btn){display:none}.brand{font-size:20px}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--black)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 56%,var(--red) 56% 74%,var(--red-deep) 74% 100%);opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 14px);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:72px 84px}
+.hero-copy{min-width:0;position:relative;z-index:2}
+.hero .label{color:var(--red-hot);display:flex;align-items:center;gap:12px}
+.hero .label::before{content:"";width:36px;height:3px;background:var(--red)}
+.hero h1{font-size:clamp(60px,9vw,128px);margin:18px 0 18px}
+.hero h1 span{display:block}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px var(--white)}
+.hero h1 .red{color:var(--red)}
+.hero-sub{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:clamp(16px,1.8vw,20px);color:var(--silver);margin:0 0 34px}
+.hero-sub b{color:var(--white);font-weight:700}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stage{position:relative;height:clamp(340px,42vw,500px);min-width:0}
+.hero-card{position:absolute;width:58%;max-width:300px;background:var(--white);padding:10px 10px 0;box-shadow:0 30px 60px rgba(0,0,0,.45);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hero-card img{aspect-ratio:8/9;object-fit:cover;width:100%}
+.hero-card figcaption{font-family:var(--label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--black);padding:8px 2px 10px;display:flex;justify-content:space-between}
+.hero-card figcaption span{color:var(--red)}
+.hero-card:nth-child(1){left:0;top:12%;transform:rotate(-8deg)}
+.hero-card:nth-child(2){left:21%;top:0;transform:rotate(2deg);z-index:2}
+.hero-card:nth-child(3){right:0;top:16%;transform:rotate(9deg)}
+.hero-stage:hover .hero-card:nth-child(1){transform:rotate(-12deg) translateX(-14px)}
+.hero-stage:hover .hero-card:nth-child(3){transform:rotate(13deg) translateX(14px)}
+.hero-stage:hover .hero-card:nth-child(2){transform:rotate(0) translateY(-10px)}
+@media (max-width:860px){
+  .hero::before{background:linear-gradient(170deg,transparent 0 58%,var(--red) 58% 80%,var(--red-deep) 80%)}
+  .hero .wrap{grid-template-columns:1fr;padding-block:48px 56px;gap:28px}
+  .hero-stage{height:clamp(300px,82vw,420px);max-width:520px;width:100%;margin:0 auto}
+}
+
+/* Section scaffolding */
+.section{padding-block:96px}
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:44px}
+.section-head h2{font-size:clamp(48px,7vw,92px)}
+.section-head p{max-width:440px;margin:0;color:var(--muted)}
+.eyebrow{display:block;margin-bottom:12px;color:var(--red)}
+@media (max-width:640px){.section{padding-block:64px}}
+
+/* Showcase */
+.showcase{background:var(--paper);color:var(--black)}
+.carousel{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:var(--white);box-shadow:0 1px 0 rgba(0,0,0,.06),0 24px 60px -30px rgba(0,0,0,.35)}
+.stage{position:relative;overflow:hidden;aspect-ratio:8/9;max-width:100%;background:var(--white);touch-action:pan-y}
+.slide{position:absolute;inset:0;opacity:0;transform:scale(.96) translateX(var(--from,24px));transition:opacity .45s ease,transform .55s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.slide.is-active{opacity:1;transform:none;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:contain}
+.slide .ph{width:100%;height:100%;display:grid;place-items:center;color:var(--muted);font-family:var(--label);text-transform:uppercase;letter-spacing:.12em;border:2px dashed #d6d6d9}
+.arrow{position:absolute;top:50%;translate:0 -50%;z-index:3;width:52px;height:52px;border:0;cursor:pointer;background:var(--black);color:var(--white);display:grid;place-items:center;transition:background .2s,scale .2s}
+.arrow:hover{background:var(--red);scale:1.06}
+.arrow svg{width:22px;height:22px}
+.arrow--prev{left:14px}.arrow--next{right:14px}
+.stage-num{position:absolute;left:18px;bottom:14px;z-index:2;font-family:var(--display);font-weight:900;font-size:22px;color:var(--black);letter-spacing:.02em}
+.stage-num span{color:var(--muted)}
+
+.info{display:flex;flex-direction:column;gap:22px;padding:44px 40px;border-left:1px solid #e7e6e3;min-width:0}
+.jersey{font-family:var(--display);font-weight:900;font-size:clamp(84px,10vw,128px);line-height:.8;color:var(--red);-webkit-text-stroke:0}
+.jersey small{font-family:var(--label);font-size:16px;letter-spacing:.14em;color:var(--black);margin-right:6px;vertical-align:top}
+.info h3{font-size:clamp(36px,4vw,52px)}
+.info .colorway{color:var(--muted)}
+.info p{margin:0;max-width:52ch;color:#3a3a40}
+.info .actions{margin-top:auto;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.info .fine{font-size:14px;color:var(--muted)}
+.fade{transition:opacity .25s}
+.fade.out{opacity:0}
+
+.dots{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:26px 0 18px}
+.dot{width:28px;height:6px;border:0;padding:0;cursor:pointer;background:#cfced3;transition:background .2s,width .25s}
+.dot:hover{background:var(--muted)}
+.dot.is-active{background:var(--red);width:48px}
+.thumbs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.thumb{flex:0 0 92px;scroll-snap-align:start;border:0;padding:0;cursor:pointer;background:var(--white);outline:2px solid transparent;outline-offset:-2px;transition:outline-color .2s,transform .2s;position:relative}
+.thumb img{aspect-ratio:8/9;width:100%;object-fit:cover}
+.thumb:hover{transform:translateY(-3px)}
+.thumb.is-active{outline-color:var(--red)}
+.thumb:focus-visible{outline-color:var(--red-hot);outline-offset:2px}
+@media (max-width:860px){
+  .carousel{grid-template-columns:1fr}
+  .info{border-left:0;border-top:1px solid #e7e6e3;padding:28px 22px 30px}
+  .jersey{font-size:76px}
+  .arrow{width:44px;height:44px}.arrow--prev{left:8px}.arrow--next{right:8px}
+  .thumb{flex-basis:74px}
+}
+
+/* Order */
+.order{position:relative;background:var(--black);overflow:hidden}
+.order::before{content:"";position:absolute;right:-8%;top:-30%;width:58%;height:160%;background:var(--red);transform:skewX(-18deg);opacity:.95}
+.order .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.order h2{font-size:clamp(54px,8.5vw,118px)}
+.order h2 .red{color:var(--red)}
+.order-copy p{font-size:19px;color:#d4d4d8;max-width:58ch;margin:26px 0 34px}
+.order-note{display:flex;gap:10px;align-items:flex-start;margin-top:20px;font-size:14px;color:var(--silver);max-width:52ch}
+.order-note svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;color:var(--red-hot)}
+.pending{margin-top:14px;font-size:14px;color:var(--white);background:var(--ink);border-left:3px solid var(--red);padding:10px 14px;max-width:52ch}
+.order-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;position:relative}
+.order-list li{background:var(--black);border:1px solid rgba(255,255,255,.14);padding:20px 22px;display:grid;gap:4px}
+.order-list li strong{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:1}
+.order-list li span{color:var(--silver);font-size:15px}
+@media (max-width:860px){
+  .order::before{right:-40%;top:auto;bottom:-10%;width:120%;height:46%;transform:skewY(-8deg)}
+  .order .wrap{grid-template-columns:1fr}
+}
+
+/* About */
+.about{background:var(--white);color:var(--black)}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.about h2{font-size:clamp(54px,8vw,108px)}
+.about h2 span{color:var(--red)}
+.about-lead{font-size:20px;line-height:1.5;margin:0 0 30px;max-width:56ch}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--black)}
+.pillar{padding:20px 18px 6px 0;min-width:0}
+.pillar + .pillar{padding-left:18px;border-left:1px solid #e3e2df}
+.pillar h3{font-size:26px;margin-bottom:8px}
+.pillar p{margin:0;font-size:15px;color:#4a4a50}
+@media (max-width:860px){
+  .about .wrap{grid-template-columns:1fr;gap:28px}
+  .pillars{grid-template-columns:1fr}
+  .pillar,.pillar + .pillar{padding:18px 0;border-left:0;border-bottom:1px solid #e3e2df}
+}
+
+/* Footer */
+.footer{background:var(--black);padding-block:56px 40px}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start;padding-bottom:36px;border-bottom:1px solid var(--line)}
+.footer .tag{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,44px);line-height:.95;margin-top:16px}
+.footer .tag span{color:var(--red)}
+.footer nav{display:flex;flex-wrap:wrap;gap:22px 28px}
+.footer nav a{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:15px;text-decoration:none;color:var(--silver)}
+.footer nav a:hover{color:var(--white)}
+.footer-col{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:22px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Back to top"><img class="brand-mark" src="logo.png" alt="" width="42" height="42"><span data-brand>Rowdy Provisions Co.</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#designs">Designs</a>
+      <a href="#order">Order</a>
+      <a href="#about">About</a>
+      <a class="btn" data-order-link href="#order">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="label">Vista Ridge spirit wear · Student-run</span>
+        <h1><span>Represent</span><span class="outline">the</span><span class="red">Ridge.</span></h1>
+        <p class="hero-sub"><b>Your School.</b> Your Style. <b>Your Spirit.</b></p>
+        <div class="hero-actions">
+          <a class="btn btn--xl" href="#designs">Explore Our Designs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-stage" id="heroStage" aria-label="Featured designs"></div>
+    </div>
+  </section>
+  <div class="stripe" aria-hidden="true"></div>
+
+  <section class="section showcase" id="designs">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label eyebrow">The lineup</span>
+          <h2>Our Designs</h2>
+        </div>
+        <p>Every shirt in the current collection. Use the arrows, the dots, or tap a thumbnail to flip through. On a phone, swipe.</p>
+      </div>
+
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Shirt designs">
+        <div class="stage" id="stage">
+          <button class="arrow arrow--prev" id="prev" aria-label="Previous design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow arrow--next" id="next" aria-label="Next design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg></button>
+          <div class="stage-num" id="stageNum" aria-hidden="true"></div>
+        </div>
+        <div class="info fade" id="info" aria-live="polite">
+          <div class="jersey"><small>No.</small><span id="infoNum">01</span></div>
+          <div>
+            <span class="label colorway" id="infoColor"></span>
+            <h3 id="infoName"></h3>
+          </div>
+          <p id="infoDesc"></p>
+          <div class="actions">
+            <a class="btn" data-order-link href="#order">Order this design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="fine">Mention the design name when you order.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots" role="tablist" aria-label="Choose a design"></div>
+      <div class="thumbs" id="thumbs" aria-label="All designs"></div>
+    </div>
+  </section>
+
+  <div class="stripe stripe--thin" aria-hidden="true"></div>
+  <section class="section order" id="order">
+    <div class="wrap">
+      <div class="order-copy">
+        <span class="label eyebrow" style="color:var(--silver)">Shop &amp; custom requests</span>
+        <h2>Love a design? <span class="red">Make it yours.</span></h2>
+        <p>Found your favorite design? Ready to create something unique? Visit our official ordering page to purchase your favorite Vista Ridge spirit wear or submit a request for a custom shirt design. Whether you're representing the school, your organization, or your next big event, we'll help you bring your vision to life.</p>
+        <a class="btn btn--xl" data-order-link href="#order">Shop &amp; Request Custom Designs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <div class="order-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>All orders and custom design requests are submitted through the linked ordering page. Nothing is purchased on this site.</span></div>
+        <div class="pending" id="linkPending" hidden>The ordering page link is being set up. Check back soon.</div>
+      </div>
+      <ul class="order-list">
+        <li><strong>Buy a shirt</strong><span>Pick any design from the lineup and order it on our ordering page.</span></li>
+        <li><strong>Request a custom</strong><span>Clubs, teams, and events: tell us your idea and we'll work on a design with you.</span></li>
+        <li><strong>We handle the rest</strong><span>We work with our supplier to get your order printed.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="stripe" aria-hidden="true"></div>
+  <section class="section about" id="about">
+    <div class="wrap">
+      <div>
+        <span class="label eyebrow">About us</span>
+        <h2>Built for <span>the Ridge.</span></h2>
+      </div>
+      <div>
+        <p class="about-lead">We're a student-run business helping Vista Ridge students, organizations, and families find spirit wear they actually want to wear. We design the shirts, connect you with our supplier, and make ordering simple, whether it's one tee for Friday night or a full run for your club.</p>
+        <div class="pillars">
+          <div class="pillar"><h3>School spirit</h3><p>Red, black, and Ranger pride in every design.</p></div>
+          <div class="pillar"><h3>Creativity</h3><p>Fresh designs each season, plus custom work on request.</p></div>
+          <div class="pillar"><h3>Convenience</h3><p>One ordering page for shirts and custom requests.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#top"><img class="brand-mark" src="logo.png" alt="" width="42" height="42"><span data-brand>Rowdy Provisions Co.</span></a>
+        <p class="tag">Wear it loud.<br><span>Rep the Ridge.</span></p>
+      </div>
+      <div class="footer-col">
+        <nav aria-label="Footer">
+          <a href="#designs">Designs</a><a href="#order">Order</a><a href="#about">About</a><a href="#top">Back to top</a>
+        </nav>
+        <a class="btn" data-order-link href="#order">Shop &amp; Request Custom Designs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> <span data-brand>Rowdy Provisions Co.</span> · A student-run business.</span>
+      <span>Independent student project. Not operated by Vista Ridge High School or Leander ISD.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   EDIT HERE
+   1. ORDER_URL: paste your ordering page link between the quotes.
+   2. BRAND_NAME: your business name (shows in nav + footer).
+   3. DESIGNS: one line per shirt. To add a design, drop the image
+      in the designs/ folder and copy a line. To remove one, delete
+      its line. Order here = order on the site.
+   ========================================================= */
+const ORDER_URL  = "";                 // e.g. "https://yourstore.com/vista-ridge"
+const BRAND_NAME = "Rowdy Provisions Co.";
+
+const DESIGNS = [
+  { img: "designs/we-ride-at-dawn.jpg",          name: "We Ride at Dawn",        color: "Heather red",   desc: "A lone Ranger on horseback under a full moon, framed by arched type and a Vista Ridge script." },
+  { img: "designs/for-the-glory.jpg",            name: "For the Glory",          color: "White",         desc: "Bold stacked RANGERS lettering over a rearing horse and mesa backdrop in red and black." },
+  { img: "designs/rangers-badge.jpg",            name: "Rangers Script Badge",   color: "Black",         desc: "Clean red badge with a white Rangers script. Simple, sharp, and easy to wear every day." },
+  { img: "designs/ranger-patch.jpg",             name: "Ranger Spirit Patch",    color: "Sand",          desc: "Vintage arch patch with a cowboy skull and “Ranger spirit and pride till the end of time.”" },
+  { img: "designs/time-to-ride.jpg",             name: "It's Time to Ride",      color: "Gray",          desc: "Western serif RANGERS with a rider on horseback and a starred “It's time to ride” banner." },
+  { img: "designs/red-black-silver-charcoal.jpg",name: "Red! Black! Silver!",    color: "Charcoal",      desc: "The game-day chant in heavy stacked type. Built for the student section." },
+  { img: "designs/red-black-silver-white.jpg",   name: "Red! Black! Silver!",    color: "White",         desc: "Same chant, lighter shirt. Red, black, and silver type pops on white." },
+  { img: "designs/diamond-script.jpg",           name: "Diamond Script",         color: "Dark heather",  desc: "Rangers script cutting across a black diamond with Vista Ridge tucked inside." },
+  { img: "designs/arch-mascot.jpg",              name: "Est. Arch",              color: "Sand",          desc: "VISTA RIDGE RANGERS wrapped in an arch around the mascot, with a star and est. date below." },
+  { img: "designs/vista-ridge-mascot.jpg",       name: "Ranger Pointer",         color: "Cream",         desc: "Big red VISTA RIDGE lettering with the mascot pointing straight out of the shirt." },
+  { img: "designs/rowdy-provisions.jpg",         name: "Rowdy Provisions Co.",   color: "Ash",           desc: "Our own label tee. Retro red-and-black Rowdy script in a vintage label shape." },
+  { img: "designs/vista-ridge-script.jpg",       name: "Vista Ridge Script",     color: "Sand",          desc: "Understated black script with RANGERS and the est. year. Goes with everything." },
+  { img: "designs/striped-overalls.jpg",         name: "Striped Overalls",       color: "Red & white",   desc: "Red-and-white striped overalls for game days and spirit weeks." },
+];
+
+// Which designs appear in the hero fan (by position in the list, starting at 0)
+const HERO_PICKS = [1, 0, 2];
+/* ========================= end of edit area ========================= */
+
+(function(){
+  const $ = s => document.querySelector(s);
+  const pad = n => String(n).padStart(2,"0");
+
+  // Brand + year
+  document.querySelectorAll("[data-brand]").forEach(el => el.textContent = BRAND_NAME);
+  $("#year").textContent = new Date().getFullYear();
+
+  // Ordering links
+  const hasUrl = /^https?:\/\//i.test(ORDER_URL.trim());
+  document.querySelectorAll("[data-order-link]").forEach(a => {
+    if (hasUrl) { a.href = ORDER_URL.trim(); a.target = "_blank"; a.rel = "noopener"; }
+    else a.href = "#order";
+  });
+  $("#linkPending").hidden = hasUrl;
+
+  // Hero fan
+  const hero = $("#heroStage");
+  HERO_PICKS.filter(i => DESIGNS[i]).forEach(i => {
+    const d = DESIGNS[i];
+    const f = document.createElement("figure");
+    f.className = "hero-card"; f.style.margin = "0";
+    f.innerHTML = `<img src="${d.img}" alt="${d.name} shirt" loading="eager"><figcaption>${d.name}<span>No. ${pad(i+1)}</span></figcaption>`;
+    hero.appendChild(f);
+  });
+
+  // Carousel
+  const stage = $("#stage"), dots = $("#dots"), thumbs = $("#thumbs"), info = $("#info");
+  const slides = [], dotEls = [], thumbEls = [];
+  const total = DESIGNS.length;
+  let cur = 0;
+
+  DESIGNS.forEach((d, i) => {
+    const s = document.createElement("div");
+    s.className = "slide"; s.setAttribute("role","group");
+    s.setAttribute("aria-roledescription","slide"); s.setAttribute("aria-label", `${i+1} of ${total}: ${d.name}`);
+    s.innerHTML = d.img ? `<img src="${d.img}" alt="${d.name}, ${d.color} shirt" ${i<2?'':'loading="lazy"'}>`
+                        : `<div class="ph">Image coming soon</div>`;
+    stage.insertBefore(s, $("#stageNum"));
+    slides.push(s);
+
+    const dot = document.createElement("button");
+    dot.className = "dot"; dot.setAttribute("role","tab"); dot.setAttribute("aria-label", `Show ${d.name} (${d.color})`);
+    dot.addEventListener("click", () => go(i));
+    dots.appendChild(dot); dotEls.push(dot);
+
+    const t = document.createElement("button");
+    t.className = "thumb"; t.setAttribute("aria-label", `Show ${d.name} (${d.color})`);
+    t.innerHTML = `<img src="${d.img}" alt="" loading="lazy">`;
+    t.addEventListener("click", () => go(i));
+    thumbs.appendChild(t); thumbEls.push(t);
+  });
+
+  function render(dir){
+    slides.forEach((s, i) => {
+      s.style.setProperty("--from", (dir < 0 ? -24 : 24) + "px");
+      s.classList.toggle("is-active", i === cur);
+      s.setAttribute("aria-hidden", i === cur ? "false" : "true");
+    });
+    dotEls.forEach((d, i) => { d.classList.toggle("is-active", i === cur); d.setAttribute("aria-selected", i === cur); });
+    thumbEls.forEach((t, i) => t.classList.toggle("is-active", i === cur));
+    const d = DESIGNS[cur];
+    $("#stageNum").innerHTML = `${pad(cur+1)} <span>/ ${pad(total)}</span>`;
+    info.classList.add("out");
+    setTimeout(() => {
+      $("#infoNum").textContent = pad(cur+1);
+      $("#infoName").textContent = d.name;
+      $("#infoColor").textContent = d.color || "";
+      $("#infoDesc").textContent = d.desc || "";
+      info.classList.remove("out");
+    }, 180);
+    const t = thumbEls[cur], r = thumbs;
+    if (t) r.scrollTo({ left: t.offsetLeft - r.clientWidth/2 + t.clientWidth/2, behavior: "smooth" });
+  }
+  function go(i, dir){
+    const next = (i + total) % total;
+    if (dir === undefined) dir = next >= cur ? 1 : -1;
+    cur = next; render(dir);
+  }
+  $("#prev").addEventListener("click", () => go(cur - 1, -1));
+  $("#next").addEventListener("click", () => go(cur + 1, 1));
+
+  // Keyboard arrows when the carousel area has focus or hover
+  const car = $("#carousel"); let over = false;
+  car.addEventListener("mouseenter", () => over = true);
+  car.addEventListener("mouseleave", () => over = false);
+  document.addEventListener("keydown", e => {
+    if (!(over || car.contains(document.activeElement) || thumbs.contains(document.activeElement))) return;
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1, -1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1, 1); }
+  });
+
+  // Swipe
+  let x0 = null, y0 = null;
+  stage.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(cur + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    x0 = null;
+  });
+
+  render(1);
+})();
+</script>
+</body>
+</html>
